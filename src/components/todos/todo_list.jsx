@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoListItem from './todo_list_item';
 import TodoForm from './todo_form';
+import {List, ListItem, RaisedButton} from 'material-ui'
 
 
 
@@ -9,6 +10,9 @@ const TodoList = props => {
     return (
       <div>
         <h3>Todo List goes here!</h3>
+        <List>
+        {props.todos.map(todo => <ListItem>{todo.title}</ListItem>)}
+        </List>
         <ul>
           {props.todos.map(todo => (
             <TodoListItem
